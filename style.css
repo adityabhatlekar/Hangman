@@ -1,0 +1,184 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Open Sans', sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#121212;
+    color:#fff;
+}
+
+.container{
+    display:flex;
+    gap:60px;
+    background:#1e1e1e;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Hangman section */
+
+.hangman-box{
+    text-align:center;
+}
+
+.hangman-box img{
+    max-width:220px;
+}
+
+.hangman-box h1{
+    margin-top:20px;
+    font-size:28px;
+}
+
+/* Game section */
+
+.Game-Box{
+    max-width:400px;
+}
+
+/* Word display */
+
+.word-display{
+    display:flex;
+    gap:10px;
+    list-style:none;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.word-display .letter{
+    width:30px;
+    border-bottom:3px solid #fff;
+    text-align:center;
+    font-size:24px;
+    font-weight:600;
+    text-transform:uppercase;
+}
+
+/* Hint text */
+
+.hint-Text{
+    margin-bottom:15px;
+    font-size:15px;
+}
+
+.hint-Text b{
+    color:#00c3ff;
+}
+
+/* Incorrect guesses */
+
+.Guesses-Text{
+    margin-bottom:25px;
+    font-size:15px;
+}
+
+.Guesses-Text b{
+    color:#ff4d4d;
+}
+
+/* Keyboard */
+
+.keyboard{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+}
+
+.keyboard button{
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:6px;
+    background:#2c2c2c;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.keyboard button:hover{
+    background:#00c3ff;
+    color:#000;
+}
+
+.keyboard button:disabled{
+    background:#555;
+    cursor:not-allowed;
+}
+
+/* Container fade in */
+.container{
+    animation: fadeIn 1s ease;
+}
+
+/* Hangman image small floating effect */
+.hangman-box img{
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Letters appear animation */
+.word-display .letter{
+    animation: letterPop 0.4s ease;
+}
+
+/* Keyboard button press effect */
+.keyboard button{
+    transform: scale(1);
+}
+
+.keyboard button:hover{
+    transform: scale(1.1);
+}
+
+.keyboard button:active{
+    transform: scale(0.9);
+}
+
+/* Keyframes */
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes letterPop{
+    from{
+        transform: scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform: scale(1);
+        opacity:1;
+    }
+}
